@@ -7,7 +7,7 @@
 - [x] Android
 - [ ] IOS
 
-其中 Android 参见 hid_android, Windows 和 MacOS 参见 hid_desk。
+其中 Android 参见 hid_android, Windows 和 MacOS 参见 hid_desk.  
 代码操作示例在example目录下。
 
 ## 关于IOS不支持HID说明
@@ -40,5 +40,5 @@
 ![截图4](./img/截图4.png)
 
 ## 结尾
-通过上述得知IOS是不支持hid通信的，未来我们会持续跟进IOS的相关生态。
+通过上述得知IOS是不支持hid通信的，未来我们会持续跟进IOS的相关生态。  
 也欢迎对hid感兴趣的同学提交PR。
