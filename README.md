@@ -8,6 +8,7 @@
 - [ ] IOS
 
 其中 Android 参见 hid_android, Windows 和 MacOS 参见 hid_desk。
+代码操作示例在example目录下。
 
 ## 关于IOS不支持HID说明
 我们在开发IOS时遇到了一些问题，基于这些我们跟apple的研发工程师进行了沟通。

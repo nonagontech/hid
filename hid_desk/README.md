@@ -28,9 +28,12 @@ copy -r lib /Users/nonagon
 #### 2. 在你的项目里链接动态库
 
 ##### 在 Xcode 中打开 yourapp/macos/Runner.xcworkspace。  
-拖动 hidapi.dylib 到您的 Runner/Frameworks。
 
-点击 Runner 然后进入 Build Phases 标签。
+```
+拖动 hidapi.dylib 到您的 Runner/Frameworks。
+```
+
+##### 点击 Runner 然后进入 Build Phases 标签。
 ```
 拖动 libyourlibrary.dylib 到 Copy Bundle Resources 列表。
 
@@ -39,7 +42,7 @@ copy -r lib /Users/nonagon
 在 Link Binary With Libraries 下，设置状态为 Optional。（我们使用动态链接，不需要静态链接）
 ```
 
-点击 Runner 然后进入 General 标签页。
+##### 点击 Runner 然后进入 General 标签页。
 
 ```
 拖动 libyourlibrary.dylib 到 Frameworks, Libararies and Embedded Content 列表中。
@@ -47,7 +50,7 @@ copy -r lib /Users/nonagon
 选择 Embed & Sign。
 ```
 
-点击 Runner 然后进入 Build Settings 标签页。
+##### 点击 Runner 然后进入 Build Settings 标签页。
 ```
 在 Search Paths 部分，配置 Library Search Paths 确保 libyourlibrary.dylib 的路径包括在内。
 ```
@@ -57,8 +60,27 @@ copy -r lib /Users/nonagon
 
 
 ### windows
-
+#### 点击下方下载动态库
 [hidapi动态库](https://github.com/libusb/hidapi/releases/download/hidapi-0.14.0/hidapi-win.zip)
+
+#### 使用visual studio打开项目
+右击windows项目->使用visual studio启动
+
+#### 引入链接文件
+在工程标头处右击->点击属性按钮->链接器->输入->附加依赖项->输入lib文件名称，这里填入"hidapi.dll"。这里的意义在于告诉链接器，有一个lib文件需要链接。
+
+![截图5](./../img/截图5.png)
+#### 填入dll文件地址
+在告诉链接器需要链接hidapi.dll文件后，还需要告诉链接器该文件的地址，所以这里填入dll文件地址
+
+![截图6](./../img/截图6.png)
+#### 加入函数声明
+工程标头->C/C++栏->附加包含目录->输入hidapi头文件的文件夹目录
+![截图7](./../img/截图7.png)
+
+
+#### 运行
+运行 flutter run windows 然后检查您的本地方法的调用结果。
 
 ## 开始
 ```dart 
@@ -89,7 +111,3 @@ import 'dart:async';
     });
   }
 ```
-
-## Additional information
-
-hidapi: 
